@@ -58,15 +58,25 @@ Train-Test Split: The dataset was split (typically 80/20) to evaluate model gene
 
 
 
+
 5. 📊 Exploratory Data Analysis (EDA)
 
-To better understand the structure and characteristics of the dataset: we also applied one hot encoding and visualised the categorical variabls indicating stroke and no stroke  converted to 0 and 1 thats the main use of one hot encording as it changes the categorical into numeric so it can be vsualised and read properly.
+To better understand the structure and characteristics of the dataset: we also applied one hot encoding and visualised the categorical variabls indicating stroke and no stroke  converted to 0 and 1 thats the main use of one hot encording as it changes the categorical into numeric so it can be vsualised and read properly. Put below  is the image of various variables showing the Exploratory data analysis
 
-Correlation Matrix: A heatmap was generated to visualize correlations among numeric variables. by this correlation matrix the aim was to view the largest or least correlated variables in the dataset and as shown by the results that we got evr married and age with the highest of 0.70 and the least being -0.64 which is age and worktype.
+![alt text](image-1.png)
 
-Multicollinearity Check: VIF (Variance Inflation Factor) was computed for all predictors. All values were below 5, indicating no significant multicollinearity. The VIF measures the variance in each variable in the dataset and with the threshhold of 5 showing the maximum by which our model can be affected with variable with more variance but instead according to the findings it showed that the variance based on the lollipop plot did not exceed whch clearly shown that the variables used where good enough not to overlap.
+Correlation Matrix: A heatmap was generated to visualize correlations among numeric variables. by this correlation matrix the aim was to view the largest or least correlated variables in the dataset and as shown by the results that we got evr married and age with the highest of 0.70 and the least being -0.64 which is age and worktype. Below is the image attached showing the correlation matrix and their results
+
+![alt text](image-2.png)
+
+Multicollinearity Check: VIF (Variance Inflation Factor) was computed for all predictors. All values were below 5, indicating no significant multicollinearity. The VIF measures the variance in each variable in the dataset and with the threshhold of 5 showing the maximum by which our model can be affected with variable with more variance but instead according to the findings it showed that the variance based on the lollipop plot did not exceed whch clearly shown that the variables used where good enough not to overlap. 
+Below find attached VIF image
+
+![alt text](image-3.png)
 
 Feature Importance: A random forest classifier was trained to rank feature importance. Results:
+
+![alt text](image-4.png)
 
 Average Glucose Level: Highest importance (~0.25) and more showing the highest contribution to stroke occurence which means that the more the glucose level the highest chance of an individual to have stroke.
 
@@ -80,6 +90,8 @@ The 'id' feature was removed due to its irrelevance. it had no impact on the fea
 
 6. 📉 Dimensionality Reduction with PCA
 
+![alt text](image-5.png)
+
 Principal Component Analysis (PCA) was employed to reduce dimensionality and visualize data variance.The components with the largest dataset and the elbow point was 4 showing the variables that contribute the most to the overal dataset, involving the bmi, glucose level and smoking which also shows tha variance ratio of the dataset variables.
 An explained variance plot (elbow plot) was used to determine the optimal number of components to retain while minimizing information loss.
 -PCA helped verify feature interdependence and potential redundancy but was not used in the final classification models as performance was higher with original features.
@@ -87,17 +99,19 @@ An explained variance plot (elbow plot) was used to determine the optimal number
 
 7. 🤖 Model Development and Evaluation
 
+![alt text](image.png)
+
 -Hyperparameters are the targets that was set with the random data and batches to test for the models which where going to be implemented and in this case it involved ,Logistic,SVC,Decision Trees and Random Forest and in the slides there is a diagram provided explaining the hyperparameter tuning through steps 1 to 4 which was training multiple models,evaluating them,Retraining again and evaluating through the accuracy and the f1 scores to look for  the best model overal and Logistic regression had the best hyperparameters which was proven by the code tself.
 
 Four classification models were developed and tested:   
 
-Logistic Regression
+Logistic Regression                    ![alt text](image-7.png)
 
-Support Vector Classifier (SVC)
+Support Vector Classifier (SVC)        ![alt text](image-6.png)
 
-Decision Tree Classifier
+Decision Tree Classifier               ![alt text](image-9.png)
 
-Random Forest Classifier
+Random Forest Classifier               ![alt text](image-8.png)
 
 -ACTUAL DATA TESTING
 Each model was trained using a Pipeline that included preprocessing steps. GridSearchCV was used for hyperparameter tuning. Model performance was evaluated using:
@@ -157,6 +171,8 @@ Statistical Significance: All top features had p-values < 0.05.
 
 
 10. 🌳 Decision Tree Insights
+
+![alt text](image-10.png)
 
 The decision tree model provided visual interpretability:
 
