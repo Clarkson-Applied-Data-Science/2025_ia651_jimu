@@ -6,10 +6,12 @@ Toolkits: Python, Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn just to name 
 
 
 1. 📌 Introduction
+
 Strokes are among the leading causes of death and disability worldwide. Early detection of individuals at risk of stroke is crucial to enable preventative interventions and reduce both mortality and long-term disability. In this project, machine learning algorithms were applied to a publicly available dataset to predict stroke occurrences based on health and demographic data. By exploring patterns in the data, the goal was to develop a predictive model that could support healthcare decision-making.
 
 
 2. 🎯 Objective
+
 The main objective of this project is to develop and evaluate classification models that can accurately predict whether an individual is likely to suffer a stroke. This was achieved by:
 
 Exploring the stroke prediction dataset from Kaggle.
@@ -28,6 +30,7 @@ Identifying limitations and proposing future improvements.
 
 
 3. 📂 Dataset Overview
+
 The dataset used for this analysis is sourced from Kaggle, titled "Stroke Prediction Dataset". It includes 5,082 patient records with the following features:
 
 Numerical Variables: age, avg_glucose_level, bmi.
@@ -42,6 +45,7 @@ Initial inspection revealed missing values (notably in the BMI column), and some
 
 
 4. 🔧 Data Preprocessing
+
 To prepare the dataset for machine learning, several preprocessing steps were carried out:
 
 Handling Missing Values: Rows with missing BMI values were either dropped or imputed (depending on the model).
@@ -55,6 +59,7 @@ Train-Test Split: The dataset was split (typically 80/20) to evaluate model gene
 
 
 5. 📊 Exploratory Data Analysis (EDA)
+
 To better understand the structure and characteristics of the dataset: we also applied one hot encoding and visualised the categorical variabls indicating stroke and no stroke  converted to 0 and 1 thats the main use of one hot encording as it changes the categorical into numeric so it can be vsualised and read properly.
 
 Correlation Matrix: A heatmap was generated to visualize correlations among numeric variables. by this correlation matrix the aim was to view the largest or least correlated variables in the dataset and as shown by the results that we got evr married and age with the highest of 0.70 and the least being -0.64 which is age and worktype.
@@ -74,6 +79,7 @@ The 'id' feature was removed due to its irrelevance. it had no impact on the fea
 
 
 6. 📉 Dimensionality Reduction with PCA
+
 Principal Component Analysis (PCA) was employed to reduce dimensionality and visualize data variance.The components with the largest dataset and the elbow point was 4 showing the variables that contribute the most to the overal dataset, involving the bmi, glucose level and smoking which also shows tha variance ratio of the dataset variables.
 An explained variance plot (elbow plot) was used to determine the optimal number of components to retain while minimizing information loss.
 -PCA helped verify feature interdependence and potential redundancy but was not used in the final classification models as performance was higher with original features.
@@ -117,6 +123,7 @@ Random Forest	0.89	Best overall model
 
 
 8. 📈 Confusion Matrix & Metrics
+
 Each model's confusion matrix was analyzed to observe:
 
 True Positives (correctly predicted strokes)
@@ -132,6 +139,7 @@ The Random Forest model had the highest true positive rate and the most balanced
 
 
 9. 🧠 Feature Importance Analysis
+
 Using model-based and statistical techniques, the most important predictors for stroke were:
 
 Age: Older age increased stroke risk.
@@ -149,6 +157,7 @@ Statistical Significance: All top features had p-values < 0.05.
 
 
 10. 🌳 Decision Tree Insights
+
 The decision tree model provided visual interpretability:
 
 Root Node: Age ≤ 0.012 split the data.
@@ -160,6 +169,7 @@ Although not the best-performing model in terms of accuracy, the decision tree o
 
 
 11. ⚠️ Limitations
+
 Despite achieving promising results, several limitations were observed:
 
 Class Imbalance: The small number of stroke cases skewed model predictions.
